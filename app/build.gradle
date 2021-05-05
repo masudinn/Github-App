@@ -1,0 +1,97 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.masudinn.finalbfaa"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures{
+        dataBinding = true
+        viewBinding = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+}
+androidExtensions{
+    experimental = true
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    def lifecycle = '2.2.0'
+    def recyclerview = '1.2.0'
+    def viewpager = '1.0.0'
+    def material = '1.4.0-alpha02'
+    def glide = '4.11.0'
+    def toast = '0.1.8'
+    def navktx = '2.3.5'
+    def coroutine = '1.4.2'
+    def lifecycles = '2.3.1'
+    def okhttp = '4.9.0'
+    def room = '2.3.0'
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview"
+    implementation "androidx.viewpager2:viewpager2:$viewpager"
+    implementation "androidx.cardview:cardview:$viewpager"
+    implementation "com.google.android.material:material:$material"
+    implementation "com.github.bumptech.glide:glide:$glide"
+    kapt("com.github.bumptech.glide:compiler:$glide")
+    implementation "com.github.Shashank02051997:FancyToast-Android:$toast"
+    implementation 'com.victor:lib:1.0.4'
+    implementation "androidx.navigation:navigation-fragment-ktx:$navktx"
+    implementation "androidx.navigation:navigation-ui-ktx:$navktx"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycles"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycles"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycles"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycles"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp"
+    implementation "com.squareup.retrofit2:converter-moshi:2.7.0"
+    implementation 'androidx.preference:preference-ktx:1.1.1'
+    implementation "com.squareup.moshi:moshi:1.8.0"
+    implementation "androidx.room:room-runtime:$room"
+    implementation "androidx.room:room-ktx:$room"
+    testImplementation "androidx.room:room-testing:$room"
+    kapt "androidx.room:room-compiler:$room"
+}
